@@ -16,11 +16,11 @@ class floatingPopulationList extends Component {
     }
 
     callFloatPopulListApi = async () => {
-            axios.get('/api/dept', {
+            alert("/api/dept 클릭...")
+            axios.get('http://192.168.1.12:8080/api/dept', {
             })
             .then( response => {
-                alert("response=");
-                alert( JSON.stringify(response) );
+                //alert( JSON.stringify(response) );
                 try {
                     this.setState({ responseFPList: response });
                     this.setState({ append_FPList: this.FloatPopulListAppend() });
