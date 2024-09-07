@@ -19,7 +19,7 @@ class floatingPopulationList extends Component {
             axios.get('/api/dept', {
             })
             .then( response => {
-                //alert( JSON.stringify(response) );
+                alert( JSON.stringify(response) );
                 try {
                     this.setState({ responseFPList: response });
                     this.setState({ append_FPList: this.FloatPopulListAppend() });
