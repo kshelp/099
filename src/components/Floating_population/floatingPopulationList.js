@@ -16,7 +16,6 @@ class floatingPopulationList extends Component {
     }
 
     callFloatPopulListApi = async () => {
-            alert("/api/dept 클릭...")
             axios.get('http://192.168.1.12:8080/api/dept', {
             })
             .then( response => {
