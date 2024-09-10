@@ -16,9 +16,14 @@ pipeline {
     }
     stage('deploy kubernetes') {
       steps {
-        kubernetesDeploy(kubeconfigId: 'kubeconfig',
-                         configs: '*.yaml')
+        sh '''
+        kubectl delete deployment react-app
+        kubectl create deployment react-app --image=192.168.1.10:8443/react-app
+        kubectl expose deployment react-app --type=LoadBalancer --port=80 \
+                                               --target-port=80 --name=react-app
+        '''
       }
+      
     }
   }
 }
