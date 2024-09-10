@@ -14,7 +14,7 @@ class Header extends Component {
                         </li>
                     </ul>
                     <div className="hd_right">
-                        <p><span>'홍길동55555'</span>님 반갑습니다.</p>
+                        <p><span>'홍길동6666'</span>님 반갑습니다.</p>
                     </div>
                     </div>
                 </div>
