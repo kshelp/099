@@ -1,3 +1,9 @@
+# 1. 빌드 단계
+FROM node:14 as build
+
+# 2. 소스코드 
+RUN git clone https://github.com/kshelp/099.git
+
 # 작업 디렉터리 설정
 WORKDIR /099
 
