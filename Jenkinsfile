@@ -1,19 +1,20 @@
 pipeline {
   agent any
   stages {
-    stage('git pull') {
+    stage('git scm update') {
       steps {
         git url: 'https://github.com/kshelp/099', branch: 'master'
       }
     }
-    stage('Build') {
+    stage('docker build and push') {
       steps {
-        sh 'docker build --no-cache -t react-app .'
-        sh 'docker tag react-app 192.168.1.10:8443/react-app'
-        sh 'docker push 192.168.1.10:8443/react-app'
+        sh '''
+        docker build --no-cache -t 192.168.1.10:8443/react-app .
+        docker push 192.168.1.10:8443/react-app
+        '''
       }
     }
-    stage('k8s deploy'){
+    stage('deploy kubernetes') {
       steps {
         kubernetesDeploy(kubeconfigId: 'kubeconfig',
                          configs: '*.yaml')
