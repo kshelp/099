@@ -16,18 +16,16 @@ class floatingPopulationList extends Component {
     }
 
     callFloatPopulListApi = async () => {
-            axios.get('http://192.168.1.12:8080/api/dept', {
-            })
-            .then( response => {
-                //alert( JSON.stringify(response) );
-                try {
-                    this.setState({ responseFPList: response });
-                    this.setState({ append_FPList: this.FloatPopulListAppend() });
-                } catch (error) {
-                    alert(error)
-                }
-            })
-            .catch( error => {alert(error);return false;} );
+        try {
+            const response = await axios.get('http://192.168.1.12:8080/api/dept');
+            // 성공적으로 데이터를 가져왔을 때
+            this.setState({ responseFPList: response });
+            this.setState({ append_FPList: this.FloatPopulListAppend() });
+        } catch (error) {
+            // 요청 중 오류가 발생했을 때
+            alert(error);
+            return false;
+        }
     }
 
     FloatPopulListAppend = () => {
