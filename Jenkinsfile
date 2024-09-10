@@ -17,11 +17,9 @@ pipeline {
     stage('deploy kubernetes') {
       steps {
         sh '''
-        kubectl delete service react-app
         kubectl delete deployment react-app
         kubectl apply -f deployment.yaml
-        kubectl expose deployment react-app --type=LoadBalancer --port=80 \
-                                               --target-port=80 --name=react-app
+        kubectl apply -f service.yaml
         '''
       }
       
