@@ -18,6 +18,7 @@ class floatingPopulationList extends Component {
     callFloatPopulListApi = async () => {
         try {
             const apiUrl = process.env.REACT_APP_API_URL;
+            apiUrl = "http://192.168.1.12:8080";
             alert("apiUrl="+apiUrl);
             const response = await axios.get(`${apiUrl}/api/dept`);
             // 성공적으로 데이터를 가져왔을 때
