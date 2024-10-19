@@ -6,9 +6,6 @@ const HostnameComponent = () => {
   const hostname = window.location.hostname;
 
   return (
-    <div>
-      <h1>Current Hostname: {hostname}</h1>
-    </div>
     <header className="gnb_box">
                 <div className="hd_top">
                     <div className="top_wrap ct1 af">
