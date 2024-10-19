@@ -17,7 +17,9 @@ class floatingPopulationList extends Component {
 
     callFloatPopulListApi = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dept`);
+            const apiUrl = process.env.REACT_APP_API_URL;
+            alert("apiUrl="+apiUrl);
+            const response = await axios.get(`${apiUrl}/api/dept`);
             // 성공적으로 데이터를 가져왔을 때
             this.setState({ responseFPList: response });
             this.setState({ append_FPList: this.FloatPopulListAppend() });
