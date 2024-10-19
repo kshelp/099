@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
-
-const HostnameComponent = () => {
-  const hostname = window.location.hostname;
-
-  return (
-    <header className="gnb_box">
+class Header extends Component {
+    render () {
+        return(
+            <header className="gnb_box">
                 <div className="hd_top">
                     <div className="top_wrap ct1 af">
                     <ul className="hd_left af">
@@ -16,7 +14,7 @@ const HostnameComponent = () => {
                         </li>
                     </ul>
                     <div className="hd_right">
-                        <p><span>'홍길동03'</span>님 반갑습니다. --> {hostname}</p>
+                        <p><span>'홍길동05'</span>님 반갑습니다.</p>
                     </div>
                     </div>
                 </div>
@@ -50,9 +48,9 @@ const HostnameComponent = () => {
                     </ul>
                     </nav>
                 </div>
-    </header>
-  );
-};
+            </header>
+        );
+    }
+}
 
-
-export default HostnameComponent;
+export default Header;
