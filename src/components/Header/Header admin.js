@@ -19,7 +19,7 @@ const HostnameComponent = () => {
                         </li>
                     </ul>
                     <div className="hd_right">
-                        <p><span>'홍길동02'</span>님 반갑습니다. @{hostname}</p>
+                        <p><span>'홍길동03'</span>님 반갑습니다. --> {hostname}</p>
                     </div>
                     </div>
                 </div>
