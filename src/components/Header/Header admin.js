@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
-class Header extends Component {
-    render () {
-        return(
-            <header className="gnb_box">
+
+const HostnameComponent = () => {
+  const hostname = window.location.hostname;
+
+  return (
+    <div>
+      <h1>Current Hostname: {hostname}</h1>
+    </div>
+    <header className="gnb_box">
                 <div className="hd_top">
                     <div className="top_wrap ct1 af">
                     <ul className="hd_left af">
@@ -14,7 +19,7 @@ class Header extends Component {
                         </li>
                     </ul>
                     <div className="hd_right">
-                        <p><span>'홍길동02'</span>님 반갑습니다.</p>
+                        <p><span>'홍길동02'</span>님 반갑습니다. @{hostname}</p>
                     </div>
                     </div>
                 </div>
@@ -48,9 +53,9 @@ class Header extends Component {
                     </ul>
                     </nav>
                 </div>
-            </header>
-        );
-    }
-}
+    </header>
+  );
+};
 
-export default Header;
+
+export default HostnameComponent;
