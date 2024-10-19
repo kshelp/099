@@ -25,6 +25,9 @@ FROM nginx:alpine
 # Nginx 설정 파일 제거 및 빌드된 파일 복사
 COPY --from=build /099/build /usr/share/nginx/html
 
+# proxy 설정
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 # Nginx 서버 실행
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
